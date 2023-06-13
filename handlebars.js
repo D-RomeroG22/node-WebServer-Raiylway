@@ -1,4 +1,4 @@
-//Vamos a usar Express para crear el mismo código de "app-old.js"
+//Vamos a usar Express para crear el mismo código de "NoExpress.js"
 //Documentación de express npm: https://www.npmjs.com/package/express
 //sitio oficial de express: https://expressjs.com/
 import express from 'express';
@@ -32,33 +32,28 @@ app.use(express.static('public/webApp')); //usaremos los archivos de la página 
 //hacemos llamado a las vistas parciales que usaremos en nuestra app
 console.log(__dirname);
 
+const options = { //options hace referencia a variables que queremos enviar a los archivos hbs
+    nombre: 'Daniel Romero',
+    titulo: 'NodeJS Development'
+}
+
 app.get('/',  (req, res)=>{
    //aquí renderizaremos el archivo hbs que tenemos en la carpeta de las vistas
-    res.render('home',{
-        nombre: 'Daniel Romero',
-        titulo: 'NodeJS Development'
-    });
-    //? el segundo argumento de render() son opciones, que podría ser variables que usariamos
+    res.render('home',options);
+    //? el segundo argumento de render() son opciones, que podría ser variables que usaríamos
     //en nuestro archivo home.hbs para renderizar ciertos bloques de código
     //? ver el archivo views/home.hbs para ver como se utilizan las opciones con los '{{ x }}' 
 });
 
 
 app.get('/generic',  (req, res)=>{
-    res.render('generic',{
-        nombre: 'Daniel Romero',
-        titulo: 'NodeJS Development'
-    });
+    res.render('generic',options);
 });
 
 
 app.get('/elements',  (req, res)=>{
     //aquí renderizaremos el archivo hbs que tenemos en la carpeta de las vistas
-     res.render('elements',{
-        nombre: 'Daniel Romero',
-        titulo: 'NodeJS Development'
-    
-    });
+     res.render('elements',options);
   
 });
  

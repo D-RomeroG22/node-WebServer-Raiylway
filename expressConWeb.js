@@ -1,4 +1,4 @@
-//Vamos a usar Express para crear el mismo código de "app-old.js"
+//Vamos a usar Express para crear el mismo código de "NoExpress.js"
 //Documentación de express npm: https://www.npmjs.com/package/express
 //sitio oficial de express: https://expressjs.com/
 import express from 'express';
@@ -16,7 +16,8 @@ app.use(express.static('public/webApp'));
 
 
 app.get('/',  (req, res)=>{
-   
+//? la ruta '/' por defecto, utiliza el archivo 'index.html' para mostrarlo de inicio   
+//? en caso de no encontrarlo, deberíamos poner algo aquí
 });
 
 //si queremos cambiar la ruta que se muestra en el navegador 'localhost:8080/generic.html' debemos hacerlo

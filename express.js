@@ -1,4 +1,4 @@
-//Vamos a usar Express para crear el mismo código de "app-old.js"
+//Vamos a usar Express para crear el mismo código de "NoExpress.js"
 //Documentación de express npm: https://www.npmjs.com/package/express
 //sitio oficial de express: https://expressjs.com/
 import express from 'express';
@@ -20,11 +20,11 @@ app.use(express.static('public')); //dentro de static se debe poner el path de l
 
 //? Si usamos los middleware no vamos a ver la ruta '/' porque esa es la ruta publica 
 app.get('/',  (req, res)=>{
-    res.send('Hello World')
+    res.send('Hello World');
   });
 
-  //? estas rutas si se verán porque son rutas definidas nuevas
-  //para crear diferentes rutas debemos crearlas igual que el eje anterior:
+//? estas rutas si se verán porque son rutas definidas nuevas
+//para crear diferentes rutas debemos crearlas igual que el eje anterior:
 app.get('/hola-mundo', (req, res)=>{
     res.send('Hola mundo home page')
   });
@@ -34,6 +34,8 @@ app.get('*',(req,res)=>{
     //podemos utilizar archivos html para mostrarlos en rutas definidas:
     res.sendFile(__dirname + '/public/404.html'); //el __dirname utiliza la ruta actual de instalación
     //de node y el + concatenamos la dirección del archivo HTML que deseamos usar.
+
+    //?sendFile utiliza la RUTA ABSOLUTA de un archivo/carpeta/directorio
 });
 
 

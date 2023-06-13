@@ -1,12 +1,12 @@
 import * as http from 'http';
 
 /**
- * HTTP es un páquete de node que nos va a ayudar a realizar web servers
+ * HTTP es un paquete de node que nos va a ayudar a realizar web servers
  * documentación: https://nodejs.org/dist/latest-v18.x/docs/api/http.html
  * 
  */
 
-//la función createServer maneja 2 parámetros request y responde
+//la función createServer maneja 2 parámetros request y response
 //request hace alusión a una petición y response a una respuesta
 http.createServer((request,response)=>{
 
