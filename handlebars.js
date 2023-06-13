@@ -57,6 +57,7 @@ app.get('/elements',  (req, res)=>{
      res.render('elements',{
         nombre: 'Daniel Romero',
         titulo: 'NodeJS Development'
+    
     });
   
 });
